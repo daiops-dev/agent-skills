@@ -53,6 +53,11 @@ If the case number is known, `precedents_get` also accepts it directly.
 On `AMBIGUOUS_MATCH`, use the user's court or case context to narrow the returned candidate paths.
 If that context does not resolve the candidates, ask the user to choose.
 
+The `court` filter in `precedents_list` accepts a court name, such as `서울중앙지방법원`.
+It does not accept `하급심` as a group filter.
+The CLI equivalent is `legalize precedents list --court 서울중앙지방법원`.
+The `법원명` field comes from the filename. The second directory identifies the court level.
+
 ## Administrative rules
 
 For “행정안전부 고시를 찾아서 전문을 보여줘”, list a small filtered page:

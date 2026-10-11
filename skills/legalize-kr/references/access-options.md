@@ -114,7 +114,7 @@ No permanent install:
   "mcpServers": {
     "legalize-kr": {
       "command": "uvx",
-      "args": ["--from", "legalize-cli[mcp]==0.5.1", "legalize-mcp"]
+      "args": ["--from", "legalize-cli[mcp]==0.5.2", "legalize-mcp"]
     }
   }
 }
@@ -157,7 +157,7 @@ file paths as MCP arguments.
 
 ### Optional remote MCP
 
-Worker 0.2.1 at `https://mcp.legalize.kr/mcp` adopts the same 11-tool MCP 2.0
+Worker 0.2.2 at `https://mcp.legalize.kr/mcp` adopts the same 11-tool MCP 2.0
 contract. Configure `Authorization: Bearer <MCP_API_KEY>` through the host's
 secure settings, never conversation or tool arguments. The endpoint is
 access-key restricted, not an anonymous public service. An optional
