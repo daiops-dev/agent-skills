@@ -88,7 +88,7 @@ Install:
 pipx install legalize-cli
 pipx install 'legalize-cli[mcp]'
 uvx legalize-cli laws list --json
-uvx --from 'legalize-cli[mcp]==0.5.2' legalize-mcp
+uvx --from 'legalize-cli[mcp]==0.5.3' legalize-mcp
 ```
 
 Set a token for GitHub API rate limits when doing repeated or code-search work:
@@ -168,7 +168,7 @@ Register a local stdio server in MCP clients. Use `uvx` when the package should 
   "mcpServers": {
     "legalize-kr": {
       "command": "uvx",
-      "args": ["--from", "legalize-cli[mcp]==0.5.2", "legalize-mcp"]
+      "args": ["--from", "legalize-cli[mcp]==0.5.3", "legalize-mcp"]
     }
   }
 }

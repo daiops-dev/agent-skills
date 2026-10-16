@@ -38,9 +38,14 @@ class MCPContractDocsTest(unittest.TestCase):
         self.assertIn("ask the user to select a returned path", workflow)
 
     def test_manifests_pin_same_cli(self) -> None:
-        pin = "legalize-cli[mcp]==0.5.2"
+        pin = "legalize-cli[mcp]==0.5.3"
         mcp = json.loads((ROOT / ".mcp.json").read_text(encoding="utf-8"))
         gemini = json.loads((ROOT / "gemini-extension.json").read_text(encoding="utf-8"))
         self.assertEqual(mcp["mcpServers"]["legalize-kr"]["args"][1], pin)
         self.assertEqual(gemini["mcpServers"]["legalize-kr"]["args"][1], pin)
         self.assertIn(pin, (ROOT / "README.md").read_text(encoding="utf-8"))
+
+    def test_full_titles_keep_published_cli_guidance(self) -> None:
+        workflow = (ROOT / "skills/legalize-kr/references/mcp-workflows.md").read_text(encoding="utf-8")
+        self.assertIn("주택도시기금법 시행령", workflow)
+        self.assertIn("Earlier CLI releases require separate name and category", workflow)

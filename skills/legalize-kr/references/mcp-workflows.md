@@ -24,6 +24,10 @@ For “근로기준법 시행령 전문을 보여줘”, keep the category separ
 {"name":"laws_get","arguments":{"law_name":"근로기준법","category":"시행령","semantic":"시행일자"}}
 ```
 
+The Sites plugin 0.2.6 also accepts a full title, for example `주택도시기금법 시행령` or `주택도시기금법시행규칙`.
+Its title suffix selects the category for get, article, and diff. A returned full path still selects an exact file.
+CLI 0.5.3 includes this fix. Earlier CLI releases require separate name and category. The remote Worker source includes the same fix for its next deployment.
+
 These tools select a file version. They do not decide article-specific commencement dates or transitional rules.
 Read `version`, `warnings`, and the source before describing legal effect.
 Use `공포일자` for a request about promulgation. The tool default remains `공포일자` for compatibility.

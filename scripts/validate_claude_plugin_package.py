@@ -8,8 +8,8 @@ import json
 import zipfile
 from pathlib import PurePosixPath
 
-CLI_PIN = "legalize-cli[mcp]==0.5.2"
-PLUGIN_VERSION = "0.2.2"
+CLI_PIN = "legalize-cli[mcp]==0.5.3"
+PLUGIN_VERSION = "0.2.3"
 
 
 REQUIRED_FILES = {
