@@ -6,12 +6,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class MCPContractDocsTest(unittest.TestCase):
-    def test_optional_remote_preserves_local_contract(self) -> None:
+    def test_remote_guides_use_current_sites_service(self) -> None:
         for path in ("README.md", "skills/legalize-kr/SKILL.md", "skills/legalize-kr/references/access-options.md"):
             text = (ROOT / path).read_text(encoding="utf-8")
             with self.subTest(path=path):
-                self.assertIn("https://mcp.legalize.kr/mcp", text)
-                self.assertIn("Bearer", text)
+                self.assertIn("https://chatgpt.legalize.kr", text)
+                self.assertIn("OAuth", text)
+                self.assertNotIn("mcp.legalize.kr", text)
+                self.assertNotIn("MCP_API_KEY", text)
                 self.assertNotIn("has not adopted 2.0", text)
                 self.assertNotIn("not covered by this 2.0", text)
 
@@ -23,10 +25,10 @@ class MCPContractDocsTest(unittest.TestCase):
             with self.subTest(marker=marker):
                 self.assertIn(marker, skill)
 
-    def test_sites_access_is_separate_from_bearer_remote(self) -> None:
+    def test_sites_access_uses_host_oauth_and_personal_keys(self) -> None:
         text = (ROOT / "skills/legalize-kr/references/access-options.md").read_text(encoding="utf-8")
-        sites = text.split("### Optional OpenAI Sites MCP", 1)[1].split("## Git Clone Patterns", 1)[0]
-        for marker in ("OAuth", "owner-private", "Created by", "personal GitHub key", "AUTH_REQUIRED", "MCP_API_KEY"):
+        sites = text.split("### Remote MCP through OpenAI Sites", 1)[1].split("## Git Clone Patterns", 1)[0]
+        for marker in ("OAuth resource", "Created by", "personal GitHub key", "AUTH_REQUIRED", "https://chatgpt.legalize.kr/settings", "not shared with other users"):
             with self.subTest(marker=marker):
                 self.assertIn(marker, sites)
 

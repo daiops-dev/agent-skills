@@ -26,7 +26,7 @@ For “근로기준법 시행령 전문을 보여줘”, keep the category separ
 
 The Sites plugin 0.2.6 also accepts a full title, for example `주택도시기금법 시행령` or `주택도시기금법시행규칙`.
 Its title suffix selects the category for get, article, and diff. A returned full path still selects an exact file.
-CLI 0.5.3 includes this fix. Earlier CLI releases require separate name and category. The remote Worker source includes the same fix for its next deployment.
+CLI 0.5.3 includes this fix. Earlier CLI releases require separate name and category. The remote Sites plugin includes the same fix.
 
 These tools select a file version. They do not decide article-specific commencement dates or transitional rules.
 Read `version`, `warnings`, and the source before describing legal effect.

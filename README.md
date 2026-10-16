@@ -17,7 +17,7 @@ Legalize-KR의 공개 한국 법률 데이터를 AI Agent가 활용하도록 돕
 
 현재 대화에 Legalize-KR MCP 조회 도구가 있다면 바로 사용하세요. Python이나 CLI를 설치하거나 개인 GitHub 계정을 연결할 필요가 없습니다. 스킬은 연결된 도구를 우선 선택하고, 검색한 문서 후보의 전문을 조회한 뒤 출처와 함께 답하도록 안내합니다.
 
-OpenAI Sites의 `Legalize-KR MCP Server` 플러그인과 이 저장소의 스킬/로컬 MCP 패키지는 연결 방식이 다릅니다. [Sites 안내 페이지](https://legalize-kr-mcp.icy-bowl-0769.chatgpt.site)는 공개되어 있으며, 조회 도구는 앱에서 계정을 연결해 사용합니다. 사이트 공개와 플러그인 공개 목록 등록은 별개입니다. 이 저장소의 ZIP을 바꾸어도 Sites 플러그인이 갱신되지는 않습니다.
+OpenAI Sites의 `Legalize-KR` 플러그인과 이 저장소의 스킬/로컬 MCP 패키지는 연결 방식이 다릅니다. [Sites 안내 페이지](https://chatgpt.legalize.kr)는 공개되어 있으며, 조회 도구는 앱에서 계정을 연결해 사용합니다. 사이트 공개와 플러그인 공개 목록 등록은 별개입니다. 이 저장소의 ZIP을 바꾸어도 Sites 플러그인이 갱신되지는 않습니다.
 
 터미널이나 개발 도구가 익숙하지 않다면 **Claude Cowork에서 Release ZIP 업로드**를 권장합니다.
 
@@ -32,7 +32,7 @@ OpenAI Sites의 `Legalize-KR MCP Server` 플러그인과 이 저장소의 스킬
 
 ## 무엇이 설치되나요?
 
-이 저장소는 두 계층을 제공합니다. 스킬 0.2.3은 PyPI에 게시된
+이 저장소는 두 계층을 제공합니다. 스킬 0.2.4는 PyPI에 게시된
 `legalize-cli[mcp]==0.5.3`을 사용합니다. 로컬 MCP는 2.0 응답을 제공하며
 CLI JSON은 기존 1.0 형식을 유지합니다.
 
@@ -294,10 +294,12 @@ Claude Desktop의 `claude_desktop_config.json`에도 같은 설정을 넣을 수
 `warnings`에서 날짜와 출처의 한계를 확인합니다. 오류는 `isError: true`와
 JSON text의 `error.code`로 구분합니다. 검색의 `outcomes`는 실제 본문 또는
 경로 검색 여부와 일부 데이터셋 실패를 밝힙니다. CLI의 `--json`은 계속
-`schema_version: "1.0"`의 평평한 키를 유지합니다. 원격 Worker 0.2.2도 같은
-11개 도구와 MCP 2.0 계약을 제공합니다. `https://mcp.legalize.kr/mcp` 연결에는
-호스트 설정의 Bearer 접근키가 필요하며 키를 대화나 도구 인수로 전달하지 않습니다.
-기존 로컬 stdio 설정은 그대로 사용할 수 있습니다.
+`schema_version: "1.0"`의 평평한 키를 유지합니다.
+원격 MCP는 [Legalize-KR Sites 플러그인](https://chatgpt.legalize.kr)이며 같은
+11개 도구와 MCP 2.0 계약을 제공합니다. 플러그인을 설치한 뒤 호스트 앱에서
+OAuth로 계정을 연결합니다. 개인 GitHub 키는 사이트의 개인 키 페이지에서
+선택적으로 등록하며 다른 사용자와 공유하지 않습니다. 키를 대화나 도구 인수로 전달하지 않습니다.
+로컬 stdio 설치는 별도 방식이며 기존 설정을 그대로 사용할 수 있습니다.
 
 ## 직접 API에 넣기
 

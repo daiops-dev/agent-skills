@@ -9,7 +9,7 @@ import zipfile
 from pathlib import PurePosixPath
 
 CLI_PIN = "legalize-cli[mcp]==0.5.3"
-PLUGIN_VERSION = "0.2.3"
+PLUGIN_VERSION = "0.2.4"
 
 
 REQUIRED_FILES = {
