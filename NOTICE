@@ -1,0 +1,14 @@
+agent-skills (DAIOps copy)
+Copyright 2026 Gemmy Studio Inc. (additions and modifications)
+
+This repository is a copy of legalize-kr/agent-skills (commit 1dc5d00),
+dual-licensed under the Apache License 2.0 and the MIT License
+(see LICENSE-APACHE and LICENSE-MIT, unchanged).
+Original: https://github.com/legalize-kr/agent-skills
+
+The laws dataset installed by daiops.yaml is legalize-kr/legalize-kr
+(https://github.com/legalize-kr/legalize-kr). Its README states that the
+statute texts are public works of the Korean government and that the
+structure and metadata are MIT licensed. That repository has no LICENSE file.
+
+Added, removed and modified files are listed in CHANGES.md.

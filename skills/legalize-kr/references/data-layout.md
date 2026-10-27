@@ -32,6 +32,11 @@ kr/근로기준법/시행령.md
 kr/친일반민족행위자재산의국가귀속에관한특별법/법률.md
 ```
 
+One folder can hold more than one file of the same kind, for example `kr/근로기준법/법률.md` (a 1997 repeal
+notice) next to `kr/근로기준법/법률(법률).md` (the version in force). Every file says `상태: 시행`, so neither the
+file name nor `상태` tells which one is current. `scripts/law.py` picks the newest by `공포일자`, then `시행일자`.
+Frontmatter can be longer than 80 KB when a law has many attachments (`첨부파일`).
+
 Important frontmatter fields:
 
 - `제목`

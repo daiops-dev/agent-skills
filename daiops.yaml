@@ -1,0 +1,24 @@
+# DAIOps install manifest. DAIOps runs these steps, in order, in the workspace of every
+# employee hired from this talent. A step whose `check` already passes is skipped.
+# Versions must be pinned (DAIOps rejects @latest and unpinned global installs).
+#
+# The laws dataset is the source archive of one legalize-kr/legalize-kr commit (about 54 MB
+# compressed, 291 MB unpacked, 3,059 laws). scripts/law.py reads /opt/legalize-kr/current.
+schema: 1
+upstream:
+  repo: legalize-kr/agent-skills
+  ref: 1dc5d0057d2480d9194a21ee8b01aa03529327aa
+install:
+  - id: laws
+    run: >-
+      rm -rf /opt/legalize-kr/35a67af18376e99161169d1cb2a629a01afbb398 &&
+      mkdir -p /opt/legalize-kr/35a67af18376e99161169d1cb2a629a01afbb398 &&
+      curl -fsSL -o /tmp/legalize-kr.tgz
+      https://codeload.github.com/legalize-kr/legalize-kr/tar.gz/35a67af18376e99161169d1cb2a629a01afbb398 &&
+      tar xzf /tmp/legalize-kr.tgz --strip-components=1
+      -C /opt/legalize-kr/35a67af18376e99161169d1cb2a629a01afbb398 &&
+      rm -f /tmp/legalize-kr.tgz &&
+      echo "legalize-kr/legalize-kr 35a67af18376e99161169d1cb2a629a01afbb398 2026-10-26"
+      > /opt/legalize-kr/35a67af18376e99161169d1cb2a629a01afbb398/SNAPSHOT &&
+      ln -sfn /opt/legalize-kr/35a67af18376e99161169d1cb2a629a01afbb398 /opt/legalize-kr/current
+    check: grep -q " 35a67af18376e99161169d1cb2a629a01afbb398 " /opt/legalize-kr/current/SNAPSHOT && test -d /opt/legalize-kr/current/kr/민법

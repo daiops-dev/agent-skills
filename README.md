@@ -1,3 +1,9 @@
+> **DAIOps copy.** This is a copy of [legalize-kr/agent-skills](https://github.com/legalize-kr/agent-skills) at `1dc5d00`,
+> dual-licensed under Apache-2.0 and MIT ([LICENSE-APACHE](LICENSE-APACHE), [LICENSE-MIT](LICENSE-MIT), unchanged).
+> The skill is rewritten to answer from a local copy of the laws dataset, with no internet, MCP server or API key,
+> for DAIOps employee workspaces. The plugin, MCP and CLI setup described below is the original's and is removed here.
+> See [NOTICE](NOTICE) and [CHANGES.md](CHANGES.md). For the online skill, use the original repository.
+
 # Legalize-KR Agent Skills
 
 [![skills.sh](https://skills.sh/b/legalize-kr/agent-skills)](https://skills.sh/legalize-kr/agent-skills)

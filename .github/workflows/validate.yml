@@ -1,10 +1,11 @@
-name: Validate plugin
+name: Validate
 
 on:
   pull_request:
   push:
     branches:
       - main
+      - daiops
 
 permissions:
   contents: read
@@ -17,16 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate Python scripts
-        run: |
-          python3 -m py_compile \
-            scripts/package_claude_plugin.py \
-            scripts/validate_claude_plugin_package.py \
-            skills/legalize-kr/scripts/select_access_mode.py
+        run: python3 -m py_compile skills/legalize-kr/scripts/law.py
 
       - name: Run repository tests
         run: python3 -m unittest discover -s tests
-
-      - name: Validate Claude Cowork plugin ZIP
-        run: |
-          python3 scripts/package_claude_plugin.py
-          python3 scripts/validate_claude_plugin_package.py dist/legalize-kr-plugin.zip
