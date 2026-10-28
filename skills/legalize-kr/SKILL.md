@@ -33,8 +33,12 @@ python3 scripts/law.py search 연차 --limit 20                  # article lines
 ## How to answer
 
 1. Find the law and read the article before you quote or summarize it. A search hit is only a candidate.
-2. Quote the article text as it is, then explain it in plain words. Keep the two apart.
-3. End with a source line: the law title, the article, `effective` (시행일자) and the snapshot date from `info`.
+2. Quote the article text as it is, copied from the `text` field of `article`, in a quote block. Quote at least
+   the paragraphs (항) your answer relies on. Then explain it in plain words below the quote. A paraphrase alone
+   is not an answer.
+3. End with a source line: the law title, the article, `effective` (시행일자) and the snapshot date. Run
+   `info` once per conversation to get the snapshot date; do not leave it out.
+   Example: `출처: 근로기준법 제60조(연차 유급휴가), 시행 2026-10-02, 데이터 기준 2026-10-26`
    If `not_yet_effective` is true, say the text is promulgated but not yet in force.
 4. If the article or law is not in the data, say so. Never write an article number, a 판례 number or a date that
    you did not read from the tool output.
