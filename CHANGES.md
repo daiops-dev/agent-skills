@@ -9,7 +9,7 @@ in a DAIOps employee workspace, including an on-premises one.
 
 | Path | Why |
 |---|---|
-| `daiops.yaml` | DAIOps installs the laws dataset (one pinned `legalize-kr/legalize-kr` commit, about 54 MB download, 291 MB unpacked) into `/opt/legalize-kr/current` |
+| `daiops.yaml` | DAIOps installs the laws dataset (one pinned `legalize-kr/legalize-kr` commit, about 54 MB download, 291 MB unpacked) into `/opt/legalize-kr/current`. Downloaded from the `daiops-dev/legalize-kr` fork so an upstream force-push cannot remove the pinned commit (2026-11-03) |
 | `skills/legalize-kr/scripts/law.py` | Offline lookup (`info`, `find`, `article`, `search`), standard library only, JSON output |
 | `tests/test_law.py`, `tests/fixtures/` | Tests for `law.py` on a small fixture law |
 | `NOTICE` and this file | |
