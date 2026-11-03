@@ -25,3 +25,9 @@ install:
       > /opt/legalize-kr/35a67af18376e99161169d1cb2a629a01afbb398/SNAPSHOT &&
       ln -sfn /opt/legalize-kr/35a67af18376e99161169d1cb2a629a01afbb398 /opt/legalize-kr/current
     check: grep -q " 35a67af18376e99161169d1cb2a629a01afbb398 " /opt/legalize-kr/current/SNAPSHOT && test -d /opt/legalize-kr/current/kr/민법
+# Everything the steps download, for on-premises installs with no internet: DAIOps fills its local
+# store from this list and points the matching URL in `run` at that store. Keep it in sync with `run`.
+materials:
+  - kind: file
+    url: https://codeload.github.com/daiops-dev/legalize-kr/tar.gz/35a67af18376e99161169d1cb2a629a01afbb398
+    sha256: "30c7153ba9aaa59d5bf05e07029d05afce90eed707c318295f04def86e2483e0"
